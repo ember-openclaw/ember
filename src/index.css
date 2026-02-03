@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg-deep text-text-primary overflow-hidden min-h-screen font-sans;
+  }
+}
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 20px rgba(255, 147, 41, 0.5);
+  }
+}
+
+/* Custom Animations from Ember */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+@keyframes halo-breathe {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.1); opacity: 0.9; }
+}
+
+@keyframes core-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes morph {
+  0%, 100% { border-radius: 45% 55% 50% 50% / 50% 45% 55% 50%; }
+  25% { border-radius: 50% 45% 55% 50% / 55% 50% 45% 50%; }
+  50% { border-radius: 55% 50% 45% 55% / 50% 55% 50% 45%; }
+  75% { border-radius: 50% 55% 50% 45% / 45% 50% 55% 50%; }
+}
+
+@keyframes float-up {
+  0% { transform: translateY(0) scale(1); opacity: 0.8; }
+  100% { transform: translateY(-80px) scale(0.3); opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes message-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Specific classes for complex gradients that are hard to do with utility classes only */
+.ember-core-gradient {
+  background: radial-gradient(circle at 40% 40%, #fff5e6 0%, #ffcc80 15%, #ff9933 35%, #e65c00 60%, #cc3300 80%, #801a00 100%);
+  box-shadow: 0 0 30px rgba(255,160,70,0.9), 0 0 60px rgba(255,120,50,0.6), 0 0 90px rgba(255,80,30,0.4);
+}
+
+.ember-halo-gradient {
+  background: radial-gradient(circle, rgba(255, 111, 0, 0.15) 0%, transparent 70%);
+}
+
+.ember-glow-mid-gradient {
+  background: radial-gradient(circle, rgba(255, 147, 41, 0.3) 0%, transparent 70%);
+}
+
+.log-stream-mask {
+  mask-image: linear-gradient(to bottom, transparent 0%, black 30%, black 100%);
+}
